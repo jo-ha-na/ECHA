@@ -1,0 +1,24 @@
+[
+    {
+        "id": "RULE-001",
+        "field": "substance_name",
+        "description": "The substance name must not be empty.",
+        "type": "non_empty_string",
+        "color":""
+    },
+    {
+        "id": "RULE-002",
+        "field": "tonnage",
+        "description": "Tonnage must be a positive number.",
+        "type": "non_empty_string",
+        "color":""
+    }
+,
+     {
+        "id": "RULE-003",
+        "field": "salade",
+        "description": "salade must be red",
+        "type": "non_empty_string",
+        "color":"red"
+    }
+]
