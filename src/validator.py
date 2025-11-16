@@ -1,20 +1,22 @@
 import json
 
-# ---- Load JSON utility ----
+
 def load_json(path):
     with open(path, "r") as f:
         return json.load(f)
 
-# ---- Validation functions ----
+
 def no_empty(value):
     return isinstance(value, str) and value.strip() != ""
+def enum(value,allowed_values):
+    return value in allowed_values
 
-# Add more validation types here if needed
 VALIDATION_FUNCTIONS = {
     "non_empty_string": no_empty,
+    "enum": enum
 }
 
-# ---- Validate a single rule ----
+
 def validate_rule(rule, submission):
     field = rule["field"]
     value = submission.get(field)
@@ -22,7 +24,12 @@ def validate_rule(rule, submission):
     func = VALIDATION_FUNCTIONS.get(rule_type)
 
 
-    passed = func(value)
+    if rule_type == "enum":
+     passed = func(value, rule.get("allowed_values", []))
+
+    else: 
+      passed = func(value)
+
 
     return {
         "rule_id": rule["id"],

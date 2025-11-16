@@ -1,5 +1,5 @@
 {
-  "substance_name": "Acetone",
-  "tonnage": 20,
-  "salade": "red"
+    "substance_name": "Acetone",
+    "hazard_class": "Flammable",
+    "salade": "red"
 }

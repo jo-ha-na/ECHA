@@ -6,12 +6,13 @@
         "type": "non_empty_string",
         "color":""
     },
-    {
+     {
         "id": "RULE-002",
-        "field": "tonnage",
-        "description": "Tonnage must be a positive number.",
-        "type": "non_empty_string",
-        "color":""
+        "field": "hazard_class",
+        "description": "Hazard class must be one of the allowed values: 'Flammable', 'Toxic', 'Corrosive'.",
+        "type": "enum",
+        "allowed_values": ["Flammable", "Toxic", "Corrosive"],
+        "color": ""
     }
 ,
      {
